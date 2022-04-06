@@ -1,0 +1,27 @@
+{
+  "name": "sehoon",
+  "version": "1.0.0",
+  "description": "![깃 허브 권세훈](https://user-images.githubusercontent.com/20807197/160443678-3d8a8220-b954-42fe-95e3-be00e3594ed8.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/30th-THE-SOPT-Server-Part/SeHoon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/30th-THE-SOPT-Server-Part/SeHoon/issues"
+  },
+  "homepage": "https://github.com/30th-THE-SOPT-Server-Part/SeHoon#readme",
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "ts-node": "^10.7.0"
+  },
+  "dependencies": {
+    "@types/jest": "^27.4.1",
+    "ts-jest": "^27.1.4"
+  }
+}
