@@ -25,15 +25,11 @@ const dinner: Dinner = {
     },
   ],
   shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
-    return array;
+    return array.sort(() => Math.random() - 0.5);
   },
   organize(array) {
-    let members = this.shuffle(array);
-
-    console.log(
-      `오늘의 저녁 식사 멤버는 ${members[0].name}, ${members[1].name}`
-    );
+    this.shuffle(array);
+    console.log(`오늘의 저녁 식사 멤버는 ${array[0].name}, ${array[1].name}`);
   },
 };
 
