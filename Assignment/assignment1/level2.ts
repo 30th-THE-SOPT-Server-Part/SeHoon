@@ -1,4 +1,3 @@
-import { Member } from "./interface/Member";
 import { Dinner } from "./interface/Dinner";
 
 const dinner: Dinner = {
@@ -29,7 +28,11 @@ const dinner: Dinner = {
   },
   organize(array) {
     this.shuffle(array);
-    console.log(`오늘의 저녁 식사 멤버는 ${array[0].name}, ${array[1].name}`);
+
+    const ob = array.filter((o) => o.group === "ob").pop();
+    const yb = array.filter((o) => o.group === "yb").pop();
+
+    console.log(`오늘의 저녁 식사 멤버는 ${ob?.name}, ${yb?.name}`);
   },
 };
 
