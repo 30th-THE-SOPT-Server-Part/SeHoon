@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "es6", // 빌드 결과물은 ES6를 따릅니다.
+      "module": "commonjs", // 모듈 방식은 commonjs 방식으로 합니다.
+      "moduleResolution": "node", // 모듈 해석 방식은 node를 따릅니다.
+      "sourceMap": true, // .map.js 파일도 함께 생성합니다.
+      "emitDecoratorMetadata": true, 
+      "experimentalDecorators": true,  
+      "removeComments": false, 
+      "noImplicitAny": false // any로 추론되는 것에 에러를 냅니다.
+    },
+    "exclude": [ // npm 라이브러리들을 import 가능하도록 설정합니다.
+      "node_modules"
+    ]
+  }

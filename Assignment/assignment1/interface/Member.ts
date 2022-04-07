@@ -1,4 +1,4 @@
 export interface Member {
-  name: string;
-  group: string;
+	name: string;
+	group: string;
 }

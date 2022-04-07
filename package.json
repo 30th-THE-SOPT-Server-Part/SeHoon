@@ -4,7 +4,8 @@
   "description": "![깃 허브 권세훈](https://user-images.githubusercontent.com/20807197/160443678-3d8a8220-b954-42fe-95e3-be00e3594ed8.png)",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --forceExit --detectOpenHandles",
+    "lint": "eslint --fix **/*.ts"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,16 @@
   },
   "homepage": "https://github.com/30th-THE-SOPT-Server-Part/SeHoon#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.5.1",
+    "prettier": "^2.6.2",
     "ts-node": "^10.7.0"
   },
   "dependencies": {
