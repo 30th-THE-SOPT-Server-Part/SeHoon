@@ -7,9 +7,6 @@
       "emitDecoratorMetadata": true, 
       "experimentalDecorators": true,  
       "removeComments": false, 
-      "noImplicitAny": false // any로 추론되는 것에 에러를 냅니다.
+      "noImplicitAny": false, // any로 추론되는 것에 에러를 냅니다.
     },
-    "exclude": [ // npm 라이브러리들을 import 가능하도록 설정합니다.
-      "node_modules"
-    ]
   }

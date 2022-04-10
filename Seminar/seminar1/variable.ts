@@ -3,8 +3,8 @@
  */
 
 // var는 재선언, 재할당이 자유롭다.
-var name1: string = "가";
-var name1: string = "나";
+var name1 = '가';
+var name1 = '나';
 
 console.log(name1);
 
@@ -28,7 +28,7 @@ console.log(name1);
 
 // var 는 선언된 블록 밖에서도 생존
 if (true) {
-  var x1: string = "ㅎㅇ요";
+	var x1 = 'ㅎㅇ요';
 }
 console.log(x1);
 
@@ -40,11 +40,11 @@ console.log(x1);
 // console.log(y);
 
 const fooo = (): void => {
-  if (true) {
-    var z1: string = "허니콤보";
-    console.log("if 블록 -> ", z1);
-  }
-  console.log("foo 블록 -> ", z1);
+	if (true) {
+		var z1 = '허니콤보';
+		console.log('if 블록 -> ', z1);
+	}
+	console.log('foo 블록 -> ', z1);
 };
 // console.log("global -> ", z1); // ERROR
 // -> var는 function scope를 가지므로 함수 밖에서 호출 실패!

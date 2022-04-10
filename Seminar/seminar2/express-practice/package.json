@@ -1,0 +1,14 @@
+{
+  "name": "express-practice",
+  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc && node dist"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.23",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
