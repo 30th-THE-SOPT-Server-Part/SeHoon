@@ -1,6 +1,6 @@
-import { Member } from './Member';
+import Member from './Member';
 
-export interface Dinner {
+export default interface Dinner {
 	member: Member[];
 	shuffle: (array: Member[]) => Member[];
 	organize: (array: Member[]) => void;

@@ -1,4 +1,4 @@
-import { Dinner } from './interface/Dinner';
+import Dinner from './interface/Dinner';
 
 const dinner: Dinner = {
 	member: [
