@@ -1,8 +1,8 @@
-import express, { Request, Response, Router } from 'express';
+import express, { Request, Response } from 'express';
 import { success } from '../library/response';
 import { sc, rm } from '../constant';
 
-const router: Router = express.Router();
+const router = express.Router();
 
 /**
  * @조회
