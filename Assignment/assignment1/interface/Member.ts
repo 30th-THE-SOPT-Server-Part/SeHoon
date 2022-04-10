@@ -1,4 +1,4 @@
 export interface Member {
-	name: string;
+	readonly name: string;
 	group: string;
 }

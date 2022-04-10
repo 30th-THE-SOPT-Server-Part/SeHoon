@@ -23,16 +23,16 @@ const dinner: Dinner = {
 			group: 'ob',
 		},
 	],
-	shuffle(array) {
-		return array.sort(() => Math.random() - 0.5);
+	shuffle(members) {
+		return members.sort(() => Math.random() - 0.5);
 	},
-	organize(array) {
-		this.shuffle(array);
+	organize(members) {
+		this.shuffle(members);
 
-		const ob = array.find((o) => o.group === 'ob');
-		const yb = array.find((o) => o.group === 'yb');
+		const obMember = members.find((member) => member.group === 'ob');
+		const ybMember = members.find((member) => member.group === 'yb');
 
-		console.log(`오늘의 저녁 식사 멤버는 ${ob?.name}, ${yb?.name}`);
+		console.log(`오늘의 저녁 식사 멤버는 ${obMember?.name}, ${ybMember?.name}`);
 	},
 };
 
