@@ -1,12 +1,8 @@
 {
   "name": "seminar2",
   "packageManager": "yarn@3.2.0",
-  "workspaces": {
-    "packages": [
-      "express-practice"
-    ]
-  },
-  "dependencies": {
-    "@sehoon": "*"
-  }
+  "private": true,
+  "workspaces": [
+    "express-practice"
+  ]
 }
