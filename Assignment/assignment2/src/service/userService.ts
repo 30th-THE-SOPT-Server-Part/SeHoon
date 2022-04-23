@@ -25,8 +25,39 @@ const createUser = async (userCreateDTO: userDTO.UserCreateDTO) => {
 	}
 };
 
+const updateUser = async (userId: string, userUpdateDTO: userDTO.UserUpdateDTO) => {
+	try {
+		await User.findByIdAndUpdate(userId, userUpdateDTO);
+	} catch (error) {
+		console.log(error);
+		throw error;
+	}
+};
+
+const findUserById = async (userId: string) => {
+	try {
+		const user = await User.findById(userId);
+		return user;
+	} catch (error) {
+		console.log(error);
+		throw error;
+	}
+};
+
+const deleteUser = async (userId: string) => {
+	try {
+		await User.findByIdAndDelete(userId);
+	} catch (error) {
+		console.log(error);
+		throw error;
+	}
+};
+
 const userService = {
 	createUser,
+	updateUser,
+	findUserById,
+	deleteUser,
 };
 
 export default userService;
