@@ -1,0 +1,8 @@
+{
+  "name": "seminar2",
+  "packageManager": "yarn@3.2.0",
+  "private": true,
+  "workspaces": [
+    "express-practice"
+  ]
+}

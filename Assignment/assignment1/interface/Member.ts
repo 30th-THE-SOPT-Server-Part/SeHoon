@@ -1,4 +1,4 @@
-export interface Member {
-	name: string;
+export default interface Member {
+	readonly name: string;
 	group: string;
 }
