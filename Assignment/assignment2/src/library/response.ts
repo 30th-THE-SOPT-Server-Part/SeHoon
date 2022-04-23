@@ -1,4 +1,4 @@
-export const success = (status: number, message: string, data?: object) => {
+const success = (status: number, message: string, data?: object) => {
 	return {
 		status,
 		success: true,
@@ -7,10 +7,17 @@ export const success = (status: number, message: string, data?: object) => {
 	};
 };
 
-export const fail = (status: number, message: string) => {
+const fail = (status: number, message: string) => {
 	return {
 		status,
 		success: false,
 		message,
 	};
 };
+
+const responses = {
+	success,
+	fail,
+};
+
+export default responses;

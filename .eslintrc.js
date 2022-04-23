@@ -9,7 +9,7 @@ module.exports = {
 		'plugin:prettier/recommended',
 	],
 	parserOptions: {
-		project: './tsconfig.json',
+		project: ['./tsconfig.eslint.json', './tsconfig.json'],
 	},
 	ignorePatterns: ['.eslintrc.js'],
 	rules: {
@@ -20,5 +20,11 @@ module.exports = {
 		'@typescript-eslint/no-unsafe-call': 'off',
 		'@typescript-eslint/ban-ts-comment': 'off',
 		'@typescript-eslint/no-unsafe-assignment': 'off',
+		'@typescript-eslint/no-namespace': 'off',
+		'@typescript-eslint/no-unsafe-argument': 'off',
+		'@typescript-eslint/no-misused-promises': 'off',
+	},
+	env: {
+		jest: true,
 	},
 };
