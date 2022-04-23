@@ -1,6 +1,6 @@
 import User from '../model/User';
 import config from '../config';
-import { userDTO } from '../DTO';
+import { userDTO, commonDTO } from '../DTO';
 
 const createUser = async (userCreateDTO: userDTO.UserCreateDTO) => {
 	try {
@@ -14,7 +14,7 @@ const createUser = async (userCreateDTO: userDTO.UserCreateDTO) => {
 
 		await user.save();
 
-		const data = {
+		const data: commonDTO.PostBaseResponseDTO = {
 			_id: user._id,
 		};
 

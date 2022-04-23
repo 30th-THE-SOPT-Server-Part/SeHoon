@@ -9,7 +9,8 @@ module.exports = {
 		'plugin:prettier/recommended',
 	],
 	parserOptions: {
-		project: ['./tsconfig.eslint.json', './tsconfig.json'],
+		createDefaultProgram: true,
+		project: './tsconfig.json',
 	},
 	ignorePatterns: ['.eslintrc.js'],
 	rules: {

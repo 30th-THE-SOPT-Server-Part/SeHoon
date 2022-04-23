@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import app from './src';
 import dotenv from 'dotenv';
 
