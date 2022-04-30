@@ -6,7 +6,8 @@
   "private": true,
   "workspaces": [
     "Seminar/*",
-    "Assignment/*"
+    "Assignment/*",
+    "__test__/*"
   ],
   "scripts": {
     "test": "jest --silent --runInBand --detectOpenHandles --verbose --forceExit",

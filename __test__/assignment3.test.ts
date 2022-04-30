@@ -1,41 +1,40 @@
 import app from '../Assignment/assignment2/src';
+import express from 'express';
 import request from 'supertest';
-import * as DB from './db.test';
+import { postDTO } from '../Assignment/assignment2/src/DTO';
+import { rm, sc } from '../Assignment/assignment2/src/constant';
+import { postService } from '../Assignment/assignment2/src/service';
 
-beforeAll(async () => {
-	await DB.connect();
-});
+let server = express();
 
-afterEach(async () => {
-	await DB.clearDatabase();
-});
-
-afterAll(async () => {
-	await DB.closeDatabase();
+beforeAll(() => {
+	server = app;
 });
 
 describe('[3주차 과제]', () => {
-	it('[POST] /api/blog', async () => {
-		const response = await request(app).get('/api/user');
+	it('✨ 게시글 API 테스트', async () => {
+		const post: postDTO.PostCreateDTO = {
+			title: '테스트',
+			content: '테스트 게시글 내용',
+		};
 
-		expect(response.statusCode).toBe(200);
-	});
+		const res = await request(app).post('/api/blog').send(post);
 
-	it('[POST] /api/blog', async () => {
-		const response = await request(app).get('/api/user');
+		expect(res.body.status).toBe(sc.CREATED);
+		expect(res.body.message).toBe(rm.CREATE_POST_SUCCESS);
 
-		expect(response.statusCode).toBe(200);
-	});
+		const postId = String(res.body.data._id);
 
-	it('[POST] /api/blog', async () => {
-		const response = await request(app).get('/api/user');
+		const postForUpdate: postDTO.PostUpdateDTO = {
+			title: '안녕하세요.',
+		};
 
-		expect(response.statusCode).toBe(200);
-	});
+		await postService.updatePost(postId, postForUpdate);
+		const updatedPost = await postService.findPostById(postId);
 
-	it('[POST] /api/blog', async () => {
-		const response = await request(app).get('/api/user');
+		expect(updatedPost?.title).toBe('안녕하세요.');
+		expect(updatedPost?.content).toBe('테스트 게시글 내용');
 
-		expect(response.statusCode).toBe(200);
+		await request(app).delete(`/api/blog/${postId}`);
 	});
 });

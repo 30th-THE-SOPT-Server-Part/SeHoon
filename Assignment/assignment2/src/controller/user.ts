@@ -15,7 +15,7 @@ const createUser = async (req: Request, res: Response): Promise<void> => {
 	try {
 		const data: commonDTO.PostBaseResponseDTO = await userService.createUser(userCreateDTO);
 		res.status(sc.CREATED).send(response.success(sc.CREATED, rm.SIGNIN_SUCCESS, data));
-	} catch (error) {
+	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
 	}
@@ -34,7 +34,7 @@ const updateUser = async (req: Request, res: Response): Promise<void> => {
 		await userService.updateUser(userId, userUpdateDTO);
 
 		res.status(sc.NO_CONTENT).send();
-	} catch (error) {
+	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
 	}
@@ -50,8 +50,10 @@ const findUser = async (req: Request, res: Response): Promise<void> => {
 
 	try {
 		const user = await userService.findUserById(userId);
-		res.status(sc.OK).send(response.success(sc.OK, rm.READ_USER_SUCCESS, user));
-	} catch (error) {
+		if (!user) res.status(sc.BAD_REQUEST).send(response.fail(sc.BAD_REQUEST, rm.NO_USER));
+
+		res.status(sc.OK).send(response.success(sc.OK, rm.READ_USER_SUCCESS, user!));
+	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
 	}
@@ -68,7 +70,7 @@ const deleteUser = async (req: Request, res: Response): Promise<void> => {
 	try {
 		await userService.deleteUser(userId);
 		res.status(sc.NO_CONTENT).send();
-	} catch (error) {
+	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
 	}

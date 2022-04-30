@@ -14,8 +14,8 @@ const createPost = async (req: Request, res: Response): Promise<void> => {
 
 	try {
 		const data: commonDTO.PostBaseResponseDTO = await postService.createPost(postCreateDTO);
-		res.status(sc.CREATED).send(response.success(sc.CREATED, rm.SIGNIN_SUCCESS, data));
-	} catch (error) {
+		res.status(sc.CREATED).send(response.success(sc.CREATED, rm.CREATE_POST_SUCCESS, data));
+	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
 	}
@@ -34,7 +34,7 @@ const updatePost = async (req: Request, res: Response): Promise<void> => {
 		await postService.updatePost(postId, postUpdateDTO);
 
 		res.status(sc.NO_CONTENT).send();
-	} catch (error) {
+	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
 	}
@@ -50,8 +50,10 @@ const findPost = async (req: Request, res: Response): Promise<void> => {
 
 	try {
 		const post = await postService.findPostById(postId);
-		res.status(sc.OK).send(response.success(sc.OK, rm.READ_USER_SUCCESS, post));
-	} catch (error) {
+		if (!post) res.status(sc.BAD_REQUEST).send(response.fail(sc.BAD_REQUEST, rm.NOT_FOUND));
+
+		res.status(sc.OK).send(response.success(sc.OK, rm.READ_USER_SUCCESS, post!));
+	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
 	}
@@ -68,7 +70,7 @@ const deletePost = async (req: Request, res: Response): Promise<void> => {
 	try {
 		await postService.deletePost(postId);
 		res.status(sc.NO_CONTENT).send();
-	} catch (error) {
+	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
 	}

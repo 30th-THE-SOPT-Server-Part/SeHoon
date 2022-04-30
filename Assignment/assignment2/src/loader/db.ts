@@ -9,7 +9,7 @@ const connectDB = async () => {
 			useUnifiedTopology: true,
 		};
 
-		await mongoose.connect(config.mongoURI);
+		await mongoose.connect(config.mongoURI!);
 
 		mongoose.set('autoCreate', true);
 		mongoose.set('autoIndex', true);
