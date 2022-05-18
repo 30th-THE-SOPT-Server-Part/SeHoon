@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
+import { Movie, User } from '.';
 
 namespace review {
 	export interface ReviewInfo {
-		writer: mongoose.Types.ObjectId;
-		movie: mongoose.Types.ObjectId;
+		writer: User.UserInfo;
+		movie: Movie.MovieInfo;
 		title: string;
 		content: string;
 	}

@@ -1,5 +1,7 @@
 import config from '../config';
 import mongoose from 'mongoose';
+import Movie from '../model/Movie';
+import Review from '../model/Review';
 
 const connectDB = async () => {
 	try {
@@ -13,6 +15,22 @@ const connectDB = async () => {
 
 		mongoose.set('autoCreate', true);
 		mongoose.set('autoIndex', true);
+
+		Movie.createCollection()
+			.then((collection) => {
+				console.log(`Movie collection is created !`);
+			})
+			.catch((collection) => {
+				console.log(`Movie collection error!`);
+			});
+
+		Review.createCollection()
+			.then((collection) => {
+				console.log(`Review collection is created !`);
+			})
+			.catch((collection) => {
+				console.log(`Review collection error!`);
+			});
 
 		console.log('Mongoose Connected ...');
 	} catch (err: any) {
