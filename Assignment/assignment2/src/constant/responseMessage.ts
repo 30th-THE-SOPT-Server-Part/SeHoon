@@ -16,6 +16,13 @@ export default {
 	DELETE_USER_SUCCESS: '유저 탈퇴 성공',
 	DELETE_USER_FAIL: '유저 탈퇴 실패',
 
+	CREATE_POST_SUCCESS: '게시글 생성 성공',
+	READ_POST_SUCCESS: '게시글 조회 성공',
+	READ_ALL_POSTS_SUCCESS: '모든 게시글 조회 성공',
+	UPDATE_POST_SUCCESS: '게시글 수정 성공',
+	DELETE_POST_SUCCESS: '게시글 탈퇴 성공',
+	DELETE_POST_FAIL: '게시글 탈퇴 실패',
+
 	CREATE_TOKEN_SUCCESS: '토큰 재발급 성공',
 	EXPIRED_TOKEN: '토큰이 만료되었습니다.',
 	EXPIRED_ALL_TOKEN: '모든 토큰이 만료되었습니다.',

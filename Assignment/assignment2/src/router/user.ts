@@ -1,21 +1,11 @@
-import express, { Request, Response } from 'express';
-import { success } from '../library/response';
-import { sc, rm } from '../constant';
+import express from 'express';
+import { userController } from '../controller';
 
 const router = express.Router();
 
-/**
- * @조회
- */
-router.get('/', (req: Request, res: Response) => {
-	return res.status(sc.OK).send(success(sc.OK, rm.READ_USER_SUCCESS));
-});
-
-/**
- * @회원가입
- */
-router.post('/', (req: Request, res: Response) => {
-	return res.status(sc.OK).send(success(sc.OK, rm.SIGNUP_SUCCESS));
-});
+router.post('/', userController.createUser);
+router.put('/:userId', userController.updateUser);
+router.get('/:userId', userController.findUser);
+router.delete('/:userId', userController.deleteUser);
 
 export default router;
