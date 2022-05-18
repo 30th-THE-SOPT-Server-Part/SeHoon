@@ -2013,6 +2013,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/mongoose@npm:^5.11.97":
+  version: 5.11.97
+  resolution: "@types/mongoose@npm:5.11.97"
+  dependencies:
+    mongoose: "*"
+  checksum: 54c896814a92898535eb8965f90308f2661b75f4a53e28405802fbe9f90ba7d37140f151b1e291e08555a1700d3486911104c108ed02a94c6feddeab6bd3bfea
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*, @types/node@npm:^17.0.23":
   version: 17.0.23
   resolution: "@types/node@npm:17.0.23"
@@ -2634,6 +2643,24 @@ __metadata:
     "@yarnpkg/pnpify": ^4.0.0-rc.1
     dotenv: ^16.0.0
     express: ^4.17.3
+    mongoose: ^6.3.1
+    nodemon: ^2.0.15
+    ts-node: ^10.7.0
+    typescript: ^4.6.3
+  languageName: unknown
+  linkType: soft
+
+"assignment4@workspace:Assignment/assignment4":
+  version: 0.0.0-use.local
+  resolution: "assignment4@workspace:Assignment/assignment4"
+  dependencies:
+    "@types/express": ^4.17.13
+    "@types/mongoose": ^5.11.97
+    "@types/node": ^17.0.23
+    "@yarnpkg/pnpify": ^4.0.0-rc.1
+    dotenv: ^16.0.0
+    express: ^4.17.3
+    express-validator: ^6.14.0
     mongoose: ^6.3.1
     nodemon: ^2.0.15
     ts-node: ^10.7.0
@@ -4123,6 +4150,16 @@ __metadata:
     typescript: ^4.6.3
   languageName: unknown
   linkType: soft
+
+"express-validator@npm:^6.14.0":
+  version: 6.14.0
+  resolution: "express-validator@npm:6.14.0"
+  dependencies:
+    lodash: ^4.17.21
+    validator: ^13.7.0
+  checksum: e43ba1f18a4f02d784e44e13b1b43269a61f9d9283f31e51c230ff6d31591b3d67ad89e444a0941c0688bfd220049087e606bb61569c0eb8df2f118b866cfb43
+  languageName: node
+  linkType: hard
 
 "express@npm:^4.17.3":
   version: 4.17.3
@@ -5993,7 +6030,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.7.0":
+"lodash@npm:^4.17.15, lodash@npm:^4.17.21, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -6350,6 +6387,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mongoose@npm:*":
+  version: 6.3.3
+  resolution: "mongoose@npm:6.3.3"
+  dependencies:
+    bson: ^4.6.2
+    kareem: 2.3.5
+    mongodb: 4.5.0
+    mpath: 0.9.0
+    mquery: 4.0.2
+    ms: 2.1.3
+    sift: 16.0.0
+  checksum: 19ee22ed308ed12e165bbff4dd31404b450212a380fa496c73fd266b40609ae368d1c3f77e3646079b167f070b3be64389c5696c0676126183d2a81f94517d3b
+  languageName: node
+  linkType: hard
+
 "mongoose@npm:^6.3.1":
   version: 6.3.1
   resolution: "mongoose@npm:6.3.1"
@@ -6369,6 +6421,13 @@ __metadata:
   version: 0.8.4
   resolution: "mpath@npm:0.8.4"
   checksum: 06ad1d443766626fa361b67a4eca9cd4c36a71e475e92e8a5c242dbbc9a911adac00ce971177843b48475356df609f847342548da7701a976a2ab4116135caf0
+  languageName: node
+  linkType: hard
+
+"mpath@npm:0.9.0":
+  version: 0.9.0
+  resolution: "mpath@npm:0.9.0"
+  checksum: 1052f1f926db04502440f76164ae16ed53aa41f3ce34e7e64e3ed451b7d91ede295c3b600801c5f9eb862f03d9d59b7aa5aaf690c341fc521bef025d0f5cd773
   languageName: node
   linkType: hard
 
@@ -8312,6 +8371,13 @@ __metadata:
     convert-source-map: ^1.6.0
     source-map: ^0.7.3
   checksum: 54ce92bec2727879626f623d02c8d193f0c7e919941fa373ec135189a8382265117f5316ea317a1e12a5f9c13d84d8449052a731fe3306fa4beaafbfa4cab229
+  languageName: node
+  linkType: hard
+
+"validator@npm:^13.7.0":
+  version: 13.7.0
+  resolution: "validator@npm:13.7.0"
+  checksum: 2b83283de1222ca549a7ef57f46e8d49c6669213348db78b7045bce36a3b5843ff1e9f709ebf74574e06223461ee1f264f8cc9a26a0060a79a27de079d8286ef
   languageName: node
   linkType: hard
 

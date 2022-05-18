@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import connectDB from './loader/db';
 import dotenv from 'dotenv';
 import router from './router';
+import path from 'path';
 
 const app = express();
 

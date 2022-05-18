@@ -25,6 +25,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:Assignment/assignment2"\
       },\
       {\
+        "name": "assignment4",\
+        "reference": "workspace:Assignment/assignment4"\
+      },\
+      {\
         "name": "seminar2",\
         "reference": "workspace:Seminar/seminar2"\
       },\
@@ -38,6 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [\
       ["@sehoon", ["workspace:."]],\
       ["assignment2", ["workspace:Assignment/assignment2"]],\
+      ["assignment4", ["workspace:Assignment/assignment4"]],\
       ["express-practice", ["workspace:Seminar/seminar2/express-practice"]],\
       ["seminar2", ["workspace:Seminar/seminar2"]]\
     ],\
@@ -3329,6 +3334,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/mongoose", [\
+        ["npm:5.11.97", {\
+          "packageLocation": "./.yarn/cache/@types-mongoose-npm-5.11.97-ae7610aaed-54c896814a.zip/node_modules/@types/mongoose/",\
+          "packageDependencies": [\
+            ["@types/mongoose", "npm:5.11.97"],\
+            ["mongoose", "npm:6.3.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/node", [\
         ["npm:17.0.23", {\
           "packageLocation": "./.yarn/cache/@types-node-npm-17.0.23-167849e796-a351755473.zip/node_modules/@types/node/",\
@@ -4111,6 +4126,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.1"],\
             ["dotenv", "npm:16.0.0"],\
             ["express", "npm:4.17.3"],\
+            ["mongoose", "npm:6.3.1"],\
+            ["nodemon", "npm:2.0.15"],\
+            ["ts-node", "virtual:81250fd77b1030f933c48ca8a20e46aa8b433bcc0e46b3b3718c6ef498826dc7a234d2f04be0cfc5145bc375eb8ce6868767a86df3ac241275ac13975ffb8f94#npm:10.7.0"],\
+            ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["assignment4", [\
+        ["workspace:Assignment/assignment4", {\
+          "packageLocation": "./Assignment/assignment4/",\
+          "packageDependencies": [\
+            ["assignment4", "workspace:Assignment/assignment4"],\
+            ["@types/express", "npm:4.17.13"],\
+            ["@types/mongoose", "npm:5.11.97"],\
+            ["@types/node", "npm:17.0.23"],\
+            ["@yarnpkg/pnpify", "npm:4.0.0-rc.1"],\
+            ["dotenv", "npm:16.0.0"],\
+            ["express", "npm:4.17.3"],\
+            ["express-validator", "npm:6.14.0"],\
             ["mongoose", "npm:6.3.1"],\
             ["nodemon", "npm:2.0.15"],\
             ["ts-node", "virtual:81250fd77b1030f933c48ca8a20e46aa8b433bcc0e46b3b3718c6ef498826dc7a234d2f04be0cfc5145bc375eb8ce6868767a86df3ac241275ac13975ffb8f94#npm:10.7.0"],\
@@ -6074,6 +6109,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"]\
           ],\
           "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["express-validator", [\
+        ["npm:6.14.0", {\
+          "packageLocation": "./.yarn/cache/express-validator-npm-6.14.0-34a160ed56-e43ba1f18a.zip/node_modules/express-validator/",\
+          "packageDependencies": [\
+            ["express-validator", "npm:6.14.0"],\
+            ["lodash", "npm:4.17.21"],\
+            ["validator", "npm:13.7.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["fast-deep-equal", [\
@@ -8541,6 +8587,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sift", "npm:16.0.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:6.3.3", {\
+          "packageLocation": "./.yarn/cache/mongoose-npm-6.3.3-6cfe7772d9-19ee22ed30.zip/node_modules/mongoose/",\
+          "packageDependencies": [\
+            ["mongoose", "npm:6.3.3"],\
+            ["bson", "npm:4.6.3"],\
+            ["kareem", "npm:2.3.5"],\
+            ["mongodb", "npm:4.5.0"],\
+            ["mpath", "npm:0.9.0"],\
+            ["mquery", "npm:4.0.2"],\
+            ["ms", "npm:2.1.3"],\
+            ["sift", "npm:16.0.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["mpath", [\
@@ -8548,6 +8608,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/mpath-npm-0.8.4-52eedb1889-06ad1d4437.zip/node_modules/mpath/",\
           "packageDependencies": [\
             ["mpath", "npm:0.8.4"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:0.9.0", {\
+          "packageLocation": "./.yarn/cache/mpath-npm-0.9.0-e79cc94aea-1052f1f926.zip/node_modules/mpath/",\
+          "packageDependencies": [\
+            ["mpath", "npm:0.9.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10751,6 +10818,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/istanbul-lib-coverage", "npm:2.0.4"],\
             ["convert-source-map", "npm:1.8.0"],\
             ["source-map", "npm:0.7.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["validator", [\
+        ["npm:13.7.0", {\
+          "packageLocation": "./.yarn/cache/validator-npm-13.7.0-624277e841-2b83283de1.zip/node_modules/validator/",\
+          "packageDependencies": [\
+            ["validator", "npm:13.7.0"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -24,6 +24,7 @@ module.exports = {
 		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/no-unsafe-argument': 'off',
 		'@typescript-eslint/no-misused-promises': 'off',
+		'typescript-eslint/no-shadow': 'off',
 	},
 	env: {
 		jest: true,

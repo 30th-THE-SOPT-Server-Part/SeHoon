@@ -8,7 +8,7 @@ app
 	.listen(process.env.TEST, () => {
 		console.log(`
     ################################################
-          🛡️  Server listening on port: ${process.env.TEST} 🛡️
+          🛡️  Server listening on port: ${process.env.TEST as string} 🛡️
     ################################################
   `);
 	})
