@@ -33,7 +33,7 @@ const updatePost = async (req: Request, res: Response): Promise<void> => {
 	try {
 		await postService.updatePost(postId, postUpdateDTO);
 
-		res.status(sc.NO_CONTENT).send();
+		res.status(sc.OK).send(response.success(sc.OK, rm.UPDATE_POST_SUCCESS));
 	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
@@ -69,7 +69,7 @@ const deletePost = async (req: Request, res: Response): Promise<void> => {
 
 	try {
 		await postService.deletePost(postId);
-		res.status(sc.NO_CONTENT).send();
+		res.status(sc.OK).send(response.success(sc.OK, rm.DELETE_POST_SUCCESS));
 	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));

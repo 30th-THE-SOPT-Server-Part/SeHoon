@@ -1,12 +1,12 @@
 import express from 'express';
-import { body } from 'express-validator/check';
+import { check } from 'express-validator';
 import { reviewController } from '../controller';
 
 const router = express.Router();
 
 router.post(
 	'/movies/:movieId',
-	[body('title').notEmpty(), body('writer').notEmpty(), body('content').notEmpty()],
+	[check('title').notEmpty(), check('writer').notEmpty(), check('content').notEmpty()],
 	reviewController.createReview,
 );
 

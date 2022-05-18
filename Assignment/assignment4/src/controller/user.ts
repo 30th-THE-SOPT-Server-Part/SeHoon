@@ -33,7 +33,7 @@ const updateUser = async (req: Request, res: Response): Promise<void> => {
 	try {
 		await userService.updateUser(userId, userUpdateDTO);
 
-		res.status(sc.NO_CONTENT).send();
+		res.status(sc.OK).send(response.success(sc.OK, rm.UPDATE_USER_SUCCESS));
 	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
@@ -69,7 +69,7 @@ const deleteUser = async (req: Request, res: Response): Promise<void> => {
 
 	try {
 		await userService.deleteUser(userId);
-		res.status(sc.NO_CONTENT).send();
+		res.status(sc.OK).send(response.success(sc.OK, rm.DELETE_USER_SUCCESS));
 	} catch (error: any) {
 		console.error(error.message);
 		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));

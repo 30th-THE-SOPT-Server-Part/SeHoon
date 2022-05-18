@@ -8,6 +8,11 @@ namespace reviewDTO {
 		content: string;
 	}
 
+	export interface ReviewUpdateDTO {
+		title?: string;
+		content?: string;
+	}
+
 	export interface ReviewResponseDTO {
 		writer: string;
 		movie: Movie.MovieInfo;

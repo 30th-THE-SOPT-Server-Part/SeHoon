@@ -31,6 +31,25 @@ const createReview = async (req: Request, res: Response) => {
 };
 
 /**
+ *  @리뷰_업데이트
+ *  @route PUT /review/:reviewId
+ *  @access public
+ */
+const updateReview = async (req: Request, res: Response): Promise<void> => {
+	const userUpdateDTO: reviewDTO.ReviewUpdateDTO = req.body;
+	const { reviewId } = req.params;
+
+	try {
+		await reviewService.updateReview(reviewId, userUpdateDTO);
+
+		res.status(sc.OK).send(response.success(sc.OK, rm.UPDATE_REVIEW_SUCCESS));
+	} catch (error: any) {
+		console.error(error.message);
+		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
+	}
+};
+
+/**
  *  @리뷰_조회
  *  @route GET /review/movies/:movieId
  *  @access public
@@ -49,9 +68,28 @@ const getReviews = async (req: Request, res: Response): Promise<void> => {
 	}
 };
 
+/**
+ *  @리뷰_삭제
+ *  @route DELETE /review/:reviewId
+ *  @access public
+ */
+const deleteReview = async (req: Request, res: Response): Promise<void> => {
+	const { reviewId } = req.params;
+
+	try {
+		await reviewService.deleteReview(reviewId);
+		res.status(sc.OK).send(response.success(sc.OK, rm.DELETE_REVIEW_SUCCESS));
+	} catch (error: any) {
+		console.error(error.message);
+		res.send(sc.INTERNAL_SERVER_ERROR).send(response.fail(sc.INTERNAL_SERVER_ERROR, rm.INTERNAL_SERVER_ERROR));
+	}
+};
+
 const reviewController = {
 	createReview,
+	updateReview,
 	getReviews,
+	deleteReview,
 };
 
 export default reviewController;

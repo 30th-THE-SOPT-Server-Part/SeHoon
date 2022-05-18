@@ -26,6 +26,15 @@ const createReview = async (
 	}
 };
 
+const updateReview = async (reviewId: string, reviewUpdateDTO: reviewDTO.ReviewUpdateDTO) => {
+	try {
+		await Review.findByIdAndUpdate(reviewId, reviewUpdateDTO);
+	} catch (error) {
+		console.log(error);
+		throw error;
+	}
+};
+
 const getReviewsByMovieId = async (movieId: string): Promise<reviewDTO.ReviewResponseDTO[]> => {
 	try {
 		const reviews = await Review.find({
@@ -52,9 +61,20 @@ const getReviewsByMovieId = async (movieId: string): Promise<reviewDTO.ReviewRes
 	}
 };
 
+const deleteReview = async (reviewId: string) => {
+	try {
+		await Review.findByIdAndDelete(reviewId);
+	} catch (error) {
+		console.log(error);
+		throw error;
+	}
+};
+
 const reviewService = {
 	createReview,
+	updateReview,
 	getReviewsByMovieId,
+	deleteReview,
 };
 
 export default reviewService;
