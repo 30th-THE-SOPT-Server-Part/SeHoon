@@ -10,6 +10,8 @@ router.post(
 	reviewController.createReview,
 );
 
+router.put('/:reviewId', reviewController.updateReview);
 router.get('/movies/:movieId', reviewController.getReviews);
+router.delete('/:reviewId', reviewController.deleteReview);
 
 export default router;
