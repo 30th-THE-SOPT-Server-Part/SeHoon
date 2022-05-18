@@ -29,4 +29,17 @@ app.use(function (err: ErrorType, req: Request, res: Response, next: NextFunctio
 	res.render('error');
 });
 
+app
+	.listen(process.env.PORT, () => {
+		console.log(`
+    ################################################
+          🛡️  Server listening on port: ${process.env.PORT as string} 🛡️
+    ################################################
+  `);
+	})
+	.on('error', (err) => {
+		console.error(err);
+		process.exit(1);
+	});
+
 export default app;
